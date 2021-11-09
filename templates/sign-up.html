@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/sign-up.css') }}"
+        />
+        <link
+            rel="shortcut icon"
+            href="{{ url_for('static', filename='assets/favicon1.png') }}"
+        />
+        <title>Sign-Up</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <img class="banner" src="{{ url_for('static', filename='assets/WaterMeSoftly.jpeg') }}"/>
+            <div class="item-showcase" id="sign-up">
+                <!-- To be filled in by JavaScript by requesting the inventory from Flask. -->
+            </div>
+            <form id="sign-up" class="contact" action="/sign-up" method="post">
+                <p>
+                    <label for="message">Please insert your e-mail address here and get notified when your plant is thirsty!
+                    </label>
+                    <input type="text" name="message" id="message" />
+                    <input type="submit" value="Send" />
+                </p>
+            </form>
+
+            <div class="modal" id="confirmationModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="closeButton">&times;</span>
+                        <h2>Thank you for your input! You've just saved your plants from overwatering.</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <h3 id="shopTimeResult">
+                            <!-- To be filled in by JavaScript by processing the request with Flask. -->
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>

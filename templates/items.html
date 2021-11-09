@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Thank you for your input </title>
+</head>
+<body>
+    {% if items is defined %}
+    <p>
+        The following plant can be found in our inventory and we would love to take care of it for you. 
+        To receive an e-mail alert when to water your plant
+        <a target= "_blank" href="http://127.0.0.1:5000/sign-up">sign-up here</a>
+    </p>
+    <ul>
+        {% for item in items %}
+            <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h1>Sorry!</h1>
+    <p>
+        Sorry, we do not recognize this type of plant. Please consult an expert's recommendations here:
+    </p>
+    {% endif %}
+</body>
+</html>
